@@ -3,33 +3,82 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <meta name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport"> -->
     <title>Document</title>
+    <style>
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            background-color: DodgerBlue;
+        }
+
+        .flex-container>div {
+            background-color: #f1f1f1;
+            width: 200px;
+            margin: 10px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 30px;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="flex-container">
+        <form>
+            <div>
+                <fieldset>
+                    <legend>Datos personales</legend>
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
+                    <br><br>
 
-    <fieldset>
-        <legend>Datos personales</legend>
-        <label for="name">Nombre:</label>
-        <input type="text" id="name" name="name" required>
-    </fieldset>
+                    <label for="edad">Edad:</label>
+                    <input type="number" name="edad" min="18" max="99">
+                    <br><br>
 
-    <legend>Preguntas</legend>
-    <p>¿Cuál es tu sistema operativo favorito?</p>
-    <label><input type="radio" name="os" value="windows"> Windows </label>
-    <label><input type="radio" name="os" value="macos"> MacOS </label>
-    <label><input type="radio" name="os" value="linux"> Linux </label>
+                    <label for="genero">Genero:</label>
+                    <br>
+                    <label><input type="radio" name="genero" value="masculino">Masculino</label>
+                    <br>
+                    <label><input type="radio" name="genero" value="femenino"> Femenino</label>
+                    <br><br>
+                </fieldset>
+            </div>
 
-    <p> ¿Qué tecnologías utilizas (Selecciona todas las que correspondan): </p>
-    <label><input type="checkbox" name="tech" value="html"> HTML </label>
-    <label><input type="checkbox" name="tech" value="css"> CSS </label>
-    <label><input type="checkbox" name="tech" value="javascript"> JavaScript </label>
+            <div>
+                <fieldset>
+                    <legend>Preguntas</legend>
+                    <p>¿Cuál es tu sistema operativo favorito?</p>
+                    <label><input type="radio" name="os" value="windows"> Windows </label>
+                    <label><input type="radio" name="os" value="macos"> MacOS </label>
+                    <label><input type="radio" name="os" value="linux"> Linux </label>
+                </fieldset>
+            </div>
 
-    <legend>Comentarios Finales</legend>
-    <label for="comments">Escribe tus comentarios:</label>
-    <textarea id="comments" name="comments" rows="5"></textarea>
+            <div>
+                <fieldset>
+                    <legend>Tecnologías</legend>
+                    <p> ¿Qué tecnologías utilizas (Selecciona todas las que correspondan): </p>
+                    <label><input type="checkbox" name="tech" value="html"> HTML </label>
+                    <label><input type="checkbox" name="tech" value="css"> CSS </label>
+                    <label><input type="checkbox" name="tech" value="javascript"> JavaScript </label>
+                </fieldset>
+            </div>
+
+            <div>
+                <fieldset>
+                    <legend>Comentarios Finales</legend>
+                    <label for="comments">Escribe tus comentarios:</label>
+                    <br>
+                    <textarea id="comments" name="comments" rows="5"
+                        placeholder="Escriba aquí su comentarios"></textarea>
+                </fieldset>
+            </div>
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
 </body>
 
 </html>
