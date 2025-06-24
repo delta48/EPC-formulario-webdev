@@ -1,84 +1,103 @@
 <!DOCTYPE html>
 <html lang="es">
+<!-- ¿Qué mejoras piensas que se puedan implementar en la UI para hacerla mas atractiva para moviles?
+Agregarle un modo oscuro sería genial
+en cuanto al uso de los colores me falta más trabajo
+porque apenas me entere de como se usa el flex 😅
+-->
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <meta name="viewport"> -->
     <title>Document</title>
     <style>
-        .flex-container {
-            display: flex;
-            flex-direction: row;
-            background-color: DodgerBlue;
+        body {
+            font-family: sans-serif, arial;
         }
 
-        .flex-container>div {
-            background-color: #f1f1f1;
-            width: 200px;
+        h1 {
+            background-color: aqua;
+            text-align: center;
+        }
+
+        .contenedor {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            width: 50%;
+            background-color: rgb(101, 197, 155);
+        }
+
+        .contenedor div {
+            background-color: #7b08e0;
             margin: 10px;
             text-align: center;
-            line-height: 30px;
-            font-size: 30px;
+        }
+
+        .contenedor legend {
+            font-size: medium;
+            font-style: italic;
+        }
+
+        /* Color al hacer hover */
+        #enviar:hover {
+            background-color: #bad72b;
         }
     </style>
 </head>
 
 <body>
-    <div class="flex-container">
-        <form>
-            <div>
-                <fieldset>
-                    <legend>Datos personales</legend>
-                    <label for="name">Nombre:</label>
-                    <input type="text" id="name" name="name" required>
-                    <br><br>
+    <h1>Practica de formularios</h1>
 
-                    <label for="edad">Edad:</label>
-                    <input type="number" name="edad" min="18" max="99">
-                    <br><br>
 
-                    <label for="genero">Genero:</label>
-                    <br>
-                    <label><input type="radio" name="genero" value="masculino">Masculino</label>
-                    <br>
-                    <label><input type="radio" name="genero" value="femenino"> Femenino</label>
-                    <br><br>
-                </fieldset>
-            </div>
+    <form method="post" class="contenedor">
+        <div>
+            <fieldset>
+                <legend>Datos personales</legend>
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required placeholder="Juan Escutia">
 
-            <div>
-                <fieldset>
-                    <legend>Preguntas</legend>
-                    <p>¿Cuál es tu sistema operativo favorito?</p>
-                    <label><input type="radio" name="os" value="windows"> Windows </label>
-                    <label><input type="radio" name="os" value="macos"> MacOS </label>
-                    <label><input type="radio" name="os" value="linux"> Linux </label>
-                </fieldset>
-            </div>
 
-            <div>
-                <fieldset>
-                    <legend>Tecnologías</legend>
-                    <p> ¿Qué tecnologías utilizas (Selecciona todas las que correspondan): </p>
-                    <label><input type="checkbox" name="tech" value="html"> HTML </label>
-                    <label><input type="checkbox" name="tech" value="css"> CSS </label>
-                    <label><input type="checkbox" name="tech" value="javascript"> JavaScript </label>
-                </fieldset>
-            </div>
+                <label for="edad">Edad:</label>
+                <input type="number" name="edad" min="18" max="99" placeholder="24">
 
-            <div>
-                <fieldset>
-                    <legend>Comentarios Finales</legend>
-                    <label for="comments">Escribe tus comentarios:</label>
-                    <br>
-                    <textarea id="comments" name="comments" rows="5"
-                        placeholder="Escriba aquí su comentarios"></textarea>
-                </fieldset>
-            </div>
-            <input type="submit" value="Enviar">
-        </form>
-    </div>
+                <label for="genero">Genero:</label>
+                <label><input type="radio" name="genero" value="masculino">Masculino</label>
+                <label><input type="radio" name="genero" value="femenino"> Femenino</label>
+            </fieldset>
+        </div>
+
+        <div>
+            <fieldset>
+                <legend>SO usado</legend>
+                <p>¿Cuál es tu sistema operativo favorito?</p>
+                <label><input type="radio" name="os" value="windows"> Windows </label>
+                <label><input type="radio" name="os" value="macos"> MacOS </label>
+                <label><input type="radio" name="os" value="linux"> Linux </label>
+            </fieldset>
+        </div>
+
+        <div>
+            <fieldset>
+                <legend>Tecnologías</legend>
+                <p> ¿Qué tecnologías utilizas (Selecciona todas las que correspondan): </p>
+                <label><input type="checkbox" name="tech" value="html"> HTML </label>
+                <label><input type="checkbox" name="tech" value="css"> CSS </label>
+                <label><input type="checkbox" name="tech" value="javascript"> JavaScript </label>
+            </fieldset>
+        </div>
+
+        <div>
+            <fieldset>
+                <legend>Comentarios Finales</legend>
+                <label for="comments">Escribe tus comentarios:</label>
+                <br>
+                <textarea id="comments" name="comments" rows="5" placeholder="Escriba aquí sus comentarios"></textarea>
+            </fieldset>
+
+        </div>
+        <div><input id="enviar" type="submit" value="Enviar"></div>
+    </form>
+
 </body>
-
 </html>
